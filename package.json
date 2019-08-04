@@ -21,7 +21,11 @@
   },
   "homepage": "https://gitlab.com/nikko.miu/koa-decorative-example#readme",
   "devDependencies": {
+    "@types/jest": "^24.0.16",
     "@types/koa-bodyparser": "^4.3.0",
+    "jest": "^24.8.0",
+    "jest-simple-summary": "^1.0.2",
+    "ts-jest": "^24.0.2",
     "ts-node-dev": "^1.0.0-pre.40",
     "tslint": "^5.18.0",
     "tslint-config-airbnb": "^5.11.1",
