@@ -1,4 +1,4 @@
-image: node:alpine
+image: node:10-alpine
 
 stages:
   - test
@@ -28,8 +28,6 @@ container:
   image: docker:latest
   services:
     - docker:dind
-  dependencies:
-    - build
   script:
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
     - docker build -t $CI_REGISTRY_IMAGE:$CI_BUILD_REF_NAME .
