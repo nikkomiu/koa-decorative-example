@@ -11,13 +11,13 @@ describe('TestController', () => {
 
   it('renders about', () => {
     // Arrange
-    const context = {} as Context;
+    const ctx = {} as Context;
 
     // Act
-    controller.about(context);
+    controller.about(ctx);
 
     // Assert
-    expect(context.body).toEqual({
+    expect(ctx.body).toEqual({
       data: 'this is an example api for koa decorative',
     });
   });
@@ -26,12 +26,12 @@ describe('TestController', () => {
     // Arrange
     const query = { qparam: 'test' };
     const body = { bparam: 'test2' };
-    const context = { request: { query, body } } as Context;
+    const ctx = { request: { query, body } } as Context;
 
     // Act
-    controller.createThing(context);
+    controller.createThing(ctx);
 
     // Assert
-    expect(context.body).toEqual({ data: { ...query, ...body } });
+    expect(ctx.body).toEqual({ data: { ...query, ...body } });
   });
 });

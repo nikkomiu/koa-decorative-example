@@ -5,5 +5,5 @@ import * as services from '../services';
 
 const resourceService = new services.ResourceService();
 
-new ResourceController(resourceService);
-new TestController();
+export const resourceController = new ResourceController(resourceService);
+export const testController = new TestController();
