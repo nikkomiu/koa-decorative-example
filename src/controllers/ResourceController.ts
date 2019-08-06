@@ -7,14 +7,14 @@ import { IResourceService } from '../services/interfaces';
 class ResourceController {
   constructor(private resourceService: IResourceService) { }
 
-  @Get('/')
+  @Get()
   list(ctx: Context) {
     const items = this.resourceService.list();
 
     ctx.body = { data: items };
   }
 
-  @Post('/')
+  @Post()
   create(ctx: Context) {
     // TODO: replace crude body validation
     const { name, description } = ctx.request.body;
