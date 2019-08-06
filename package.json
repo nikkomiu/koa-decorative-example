@@ -21,6 +21,7 @@
   },
   "homepage": "https://gitlab.com/nikko.miu/koa-decorative-example#readme",
   "devDependencies": {
+    "@types/bunyan": "^1.8.6",
     "@types/jest": "^24.0.16",
     "@types/koa-bodyparser": "^4.3.0",
     "jest": "^24.8.0",
@@ -33,6 +34,7 @@
   },
   "dependencies": {
     "@types/uuid": "^3.4.5",
+    "bunyan": "^1.8.12",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
     "koa-decorative": "^1.0.0",
