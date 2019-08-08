@@ -3,10 +3,12 @@ import { Controller, Get, Post, Put, Patch, Delete } from 'koa-decorative';
 
 import { IResourceService } from '../services/interfaces';
 
-@Controller('/resource')
+// Prefix all controller routes with /resources
+@Controller('/resources')
 class ResourceController {
   constructor(private resourceService: IResourceService) { }
 
+  // GET /resources
   @Get()
   list(ctx: Context) {
     const items = this.resourceService.list();
@@ -14,6 +16,7 @@ class ResourceController {
     ctx.body = { data: items };
   }
 
+  // POST /resources
   @Post()
   create(ctx: Context) {
     // TODO: replace crude body validation
@@ -28,6 +31,7 @@ class ResourceController {
     ctx.body = { data: item };
   }
 
+  // GET /resources/some-uuid
   @Get('/:id')
   detail(ctx: Context) {
     try {
@@ -39,6 +43,8 @@ class ResourceController {
     }
   }
 
+  // PUT   /resources/some-uuid
+  // PATCH /resources/some-uuid
   @Put('/:id')
   @Patch('/:id')
   update(ctx: Context) {
@@ -53,6 +59,7 @@ class ResourceController {
     }
   }
 
+  // DELETE /resources/some-uuid
   @Delete('/:id')
   delete(ctx: Context) {
     try {
